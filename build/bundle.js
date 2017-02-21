@@ -121,7 +121,19 @@ var AjaxService = function (_ServiceBase) {
 
     _createClass(AjaxService, [{
         key: 'get',
-        value: function get(url) {}
+        value: function get(url) {
+            return new Promise(function (resolve, reject) {
+
+                var users = [{
+                    id: 1,
+                    userName: 'shimiz'
+                }];
+
+                setTimeout(function () {
+                    return resolve(users);
+                }, 1000);
+            });
+        }
     }, {
         key: 'post',
         value: function post(url, data) {}
@@ -251,6 +263,15 @@ var _userLoader = __webpack_require__(3);
 var _userLoader2 = _interopRequireDefault(_userLoader);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// 1. http request mock
+_ajaxService2.default.get('http://someurl.com/api/users').then(function (result) {
+    return successCallback(result);
+});
+
+function successCallback(result) {
+    debugger;
+}
 
 /***/ })
 /******/ ]);
