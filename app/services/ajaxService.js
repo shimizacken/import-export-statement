@@ -6,19 +6,19 @@ class AjaxService extends ServiceBase {
         super();
     }
 
-    get(){
+    get(url){
 
     }
 
-    post(){
+    post(url, data){
 
     }
 
-    put(){
+    put(url, data){
 
     }
 
-    delete(){
+    delete(url, data){
 
     }
 }

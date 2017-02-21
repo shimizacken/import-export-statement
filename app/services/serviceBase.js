@@ -4,3 +4,5 @@ class ServiceBase {
         
     }
 }
+
+export default ServiceBase;
