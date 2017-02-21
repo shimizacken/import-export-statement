@@ -11,6 +11,6 @@ function successCallback(result) {
 
     result.forEach(function (element) {
 
-        $('#mainContainer').append(element.userName + '<br />');
+        $('#mainContainer').append('<div>' + element.userName + '</div>');
     });
 }
