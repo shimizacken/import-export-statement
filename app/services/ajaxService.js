@@ -7,14 +7,26 @@ class AjaxService extends ServiceBase {
     }
 
     get(url) {
+        
         return new Promise((resolve, reject) => {
 
             var users = [{
               id: 1,
-              userName: 'shimiz'
+              userName: 'John'
+            },
+            {
+              id: 2,
+              userName: 'Ruth'
+            },
+            {
+              id: 3,
+              userName: 'Noah'
+            },{
+              id: 4,
+              userName: 'Elinor'
             }];
 
-            setTimeout(() => resolve(users), 1000);
+            setTimeout(() => resolve(users), 100);
         })
     }
 
