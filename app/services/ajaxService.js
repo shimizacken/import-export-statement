@@ -1,8 +1,9 @@
+import ServiceBase from './serviceBase.js'
 
-class AjaxService {
+class AjaxService extends ServiceBase {
 
     constructor() {
-        
+        super();
     }
 
     get(){
@@ -21,3 +22,5 @@ class AjaxService {
 
     }
 }
+
+export default AjaxService;
