@@ -14,7 +14,7 @@ class usersListComponent {
 
         this.users.forEach(function (user) {
 
-            html += '<div>' + user.userName + '</div>';
+            html += `<div><a href="/user/${user.id}">${user.userName}</a></div>`;
         });
 
         this.element.html(html);
