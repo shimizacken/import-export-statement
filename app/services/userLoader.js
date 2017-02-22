@@ -1,19 +1,37 @@
 import $ from 'jquery';
 import ServiceBase from './serviceBase.js'
 import AjaxService from './ajaxService.js'
-import UserList from '../components/usersList.js';
 
 class UserLoader extends ServiceBase {
 
     load() {
 
-        let ajaxService = new AjaxService();
-        ajaxService.get('http://someurl.com/api/users')
-            .then(function (result) {
+        return new Promise((resolve, reject) => {
 
-                let userList = new UserList(result).render();
-                $('#mainContainer').html(userList);
-            });
+
+            let ajaxService = new AjaxService();
+            ajaxService.get('http://someurl.com/api/users')
+                .then(function (result) {
+
+                    var users = [{
+                        id: 1,
+                        userName: 'John'
+                    },
+                    {
+                        id: 2,
+                        userName: 'Ruth'
+                    },
+                    {
+                        id: 3,
+                        userName: 'Noah'
+                    }, {
+                        id: 4,
+                        userName: 'Elinor'
+                    }];
+
+                    setTimeout(() => resolve(users), 100);
+                });
+        });
     }
 }
 

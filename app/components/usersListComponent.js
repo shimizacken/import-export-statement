@@ -1,10 +1,11 @@
 import $ from 'jquery';
 
-class UserList {
+class usersListComponent {
 
-    constructor(users) {
+    constructor(users, element) {
 
         this.users = users;
+        this.element = element;
     }
 
     render() {
@@ -16,9 +17,8 @@ class UserList {
             html += '<div>' + user.userName + '</div>';
         });
 
-        return html;
-
+        this.element.html(html);
     }
 }
 
-export default UserList;
+export default usersListComponent;
